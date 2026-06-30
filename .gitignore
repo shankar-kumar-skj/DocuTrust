@@ -1,0 +1,89 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+env.bak/
+venv.bak/
+
+# Environment variables (DO NOT commit secrets)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Uploaded documents
+uploads/
+!uploads/.gitkeep
+
+# Vector store (FAISS index & metadata)
+vector_store/
+!vector_store/.gitkeep
+
+# Logs
+logs/
+*.log
+!logs/.gitkeep
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.~lock.*
+
+# Jupyter notebooks (optional)
+.ipynb_checkpoints/
+*.ipynb
+
+# Generated reports (Word, PDF, etc.)
+DocuTrust_Project_Report.docx
+*.docx
+
+# Frontend build / dependency (if you later add npm)
+node_modules/
+dist/
+build/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Deployment / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+MANIFEST
+
+# Database (if using local files)
+*.db
+*.sqlite
+*.sqlite3
+
+# System / OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.tmp
+*.temp

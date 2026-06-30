@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuTrust - Chat</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo">📄 DocuTrust</div>
+            <nav>
+                <a href="dashboard.html"><span>📊</span> Dashboard</a>
+                <a href="chat.html" class="active"><span>💬</span> Chat</a>
+                <a href="upload.html"><span>📤</span> Upload</a>
+                <a href="admin.html" id="adminLink" style="display:none;"><span>📋</span> Logs</a>
+                <a href="#" id="logoutBtn"><span>🚪</span> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content chat-main">
+            <header>
+                <h2>Chat</h2>
+                <div class="user-info">
+                    <span id="userName">User</span>
+                    <span class="badge" id="userRole">employee</span>
+                </div>
+            </header>
+
+            <div class="chat-layout">
+                <!-- Sessions list -->
+                <aside class="sessions-list">
+                    <h4>History</h4>
+                    <button id="newSessionBtn">+ New Session</button>
+                    <ul id="sessionList"></ul>
+                </aside>
+
+                <!-- Chat area -->
+                <div class="chat-area">
+                    <div id="chatMessages" class="chat-messages">
+                        <div class="empty-state">Select a session or start a new one.</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <textarea id="chatInput" rows="2" placeholder="Ask a question..."></textarea>
+                        <button id="sendBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuTrust - Upload</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo">📄 DocuTrust</div>
+            <nav>
+                <a href="dashboard.html"><span>📊</span> Dashboard</a>
+                <a href="chat.html"><span>💬</span> Chat</a>
+                <a href="upload.html" class="active"><span>📤</span> Upload</a>
+                <a href="admin.html" id="adminLink" style="display:none;"><span>📋</span> Logs</a>
+                <a href="#" id="logoutBtn"><span>🚪</span> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h2>Upload Document</h2>
+                <div class="user-info">
+                    <span id="userName">User</span>
+                    <span class="badge" id="userRole">employee</span>
+                </div>
+            </header>
+
+            <div class="upload-container">
+                <div class="upload-card">
+                    <form id="uploadForm">
+                        <div class="file-drop-area">
+                            <span class="file-message">Drag & drop a PDF here, or click to browse</span>
+                            <input type="file" id="fileInput" accept=".pdf" required />
+                        </div>
+                        <button type="submit" class="btn-primary">Upload</button>
+                        <div id="uploadProgress" class="progress-bar" style="display:none;">
+                            <div id="progressFill" style="width:0%">0%</div>
+                        </div>
+                        <div id="uploadResult" class="result-message"></div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>

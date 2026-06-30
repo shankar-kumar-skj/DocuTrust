@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuTrust - Admin Logs</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo">📄 DocuTrust</div>
+            <nav>
+                <a href="dashboard.html"><span>📊</span> Dashboard</a>
+                <a href="chat.html"><span>💬</span> Chat</a>
+                <a href="upload.html"><span>📤</span> Upload</a>
+                <a href="admin.html" class="active"><span>📋</span> Logs</a>
+                <a href="#" id="logoutBtn"><span>🚪</span> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h2>Logs</h2>
+                <div class="user-info">
+                    <span id="userName">User</span>
+                    <span class="badge" id="userRole">employee</span>
+                </div>
+            </header>
+
+            <div class="logs-container">
+                <div class="log-tabs">
+                    <button id="agentLogsTab" class="active">Agent Logs</button>
+                    <button id="auditLogsTab">Audit Logs</button>
+                </div>
+                <div id="logsContent" class="logs-content">
+                    <pre id="logDisplay">Loading...</pre>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/logs.js"></script>
+</body>
+</html>

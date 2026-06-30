@@ -1,0 +1,183 @@
+nav {
+    background: #2c3e50;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+}
+nav ul li a:hover {
+    color: #3498db;
+}
+nav ul li button {
+    background: #e74c3c;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+nav ul li button:hover {
+    background: #c0392b;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.dashboard section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.dashboard section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+#docList {
+    list-style: none;
+}
+#docList li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.chat-container {
+    display: flex;
+    height: calc(100vh - 70px);
+}
+.chat-sidebar {
+    width: 260px;
+    background: #ecf0f1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+.chat-sidebar h3 {
+    margin-bottom: 1rem;
+}
+.chat-sidebar ul {
+    list-style: none;
+}
+.chat-sidebar ul li {
+    padding: 0.5rem 0.8rem;
+    margin: 0.2rem 0;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.chat-sidebar ul li:hover {
+    background: #d5dbdb;
+}
+.chat-sidebar #newChatBtn {
+    margin-top: 1rem;
+    width: 100%;
+}
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background: #fff;
+}
+#chatMessages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+}
+.user-msg {
+    text-align: right;
+    background: #3498db;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 18px 18px 0 18px;
+    margin: 0.4rem 0;
+    max-width: 70%;
+    margin-left: auto;
+}
+.assistant-msg {
+    text-align: left;
+    background: #ecf0f1;
+    color: #2c3e50;
+    padding: 0.6rem 1rem;
+    border-radius: 18px 18px 18px 0;
+    margin: 0.4rem 0;
+    max-width: 70%;
+}
+.sources, .confidence, .hallucination {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 0.3rem;
+}
+.chat-input {
+    display: flex;
+    gap: 1rem;
+}
+.chat-input textarea {
+    flex: 1;
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+.chat-input button {
+    padding: 0 1.8rem;
+}
+
+.admin-panel {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.admin-panel section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+}
+.admin-panel section h2 {
+    margin-bottom: 1rem;
+}
+#usersTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+#usersTable th, #usersTable td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+#auditLogs pre, #agentLogs pre {
+    background: #f4f4f4;
+    padding: 0.8rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    margin: 0.2rem 0;
+}

@@ -1,0 +1,43 @@
+document.addEventListener('DOMContentLoaded', async function() {
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    try {
+        // Fetch chat history to count sessions and messages
+        const res = await fetch('http://localhost:8000/api/chat/history', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (res.ok) {
+            const sessions = await res.json();
+            document.getElementById('sessionCount').textContent = sessions.length;
+            let totalMessages = 0;
+            sessions.forEach(s => totalMessages += s.messages ? s.messages.length : 0);
+            document.getElementById('msgCount').textContent = totalMessages;
+        }
+
+        // Fetch documents (you may need a separate endpoint; we'll count from sessions or assume 0)
+        // For now, we'll just show a placeholder
+        document.getElementById('docCount').textContent = '?';
+
+        // Recent activity: show last 5 sessions
+        const activityList = document.getElementById('activityList');
+        const historyRes = await fetch('http://localhost:8000/api/chat/history', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (historyRes.ok) {
+            const sessions = await historyRes.json();
+            if (sessions.length === 0) {
+                activityList.innerHTML = '<p>No activity yet.</p>';
+            } else {
+                const list = sessions.slice(0, 5).map(s => {
+                    const title = s.title || 'Untitled';
+                    const date = new Date(s.updated_at).toLocaleDateString();
+                    return `<div class="activity-item">${title} — ${date}</div>`;
+                }).join('');
+                activityList.innerHTML = list;
+            }
+        }
+    } catch (e) {
+        console.error('Dashboard error:', e);
+    }
+});
